@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Lab3</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Lab3 website.</h1>
+        <p>My name is: Nguyen Gia Khanh, Ho</p>
+        <br />
+        <br />
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("Show the song!", "Razor", "Home") 
+        @Html.ActionLink("Persons", "CreatePerson", "Home")
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <footer>
+        The layout file allow us to reuse portions of View content instead of implementing the same web components on every page.
+        <h4>Step on creating Layout:</h4>
+        <p>First, in the View folder, create Shared folder because this is default location for layout pages in an MVC application. Then create _Layout.cshtml</p>
+        <ol>
+            <li>Views folder -> Add -> New Forders -> 'Shared'</li>
+            <li>Shared folder -> Add -> New Item -> _Layout.cshtml</li>
+        </ol>
+        <h4>Step on creating StyleSheets.css:</h4>
+        <p>First, create wwwroot folder. After that, create StyleSheet.css file; we create css files in wwwroot because the web root is the directory treated as a web root folder. Static files can be stored in any folder under the web root and accessed with a relative path to that root </p>
+        <ol>
+            <li>Lab3 -> New Folders -> 'wwwroot'</li>
+            <li>wwwroot folder -> Add -> New Item -> StyleSheet.css</li>
+        </ol>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Count";
+    int i = int.Parse(@Context.Session.GetString("bottles"));
+}
+
+<form asp-controller="Home" asp-action="Razor" method="post">
+    <input type="submit" value="Play Again" />
+</form>
+
+@while (i > 0)
+{
+    <p>
+        @i green bottles hanging on the wall,<br />
+        @i green bottles hanging on the wall,<br />
+        And if one green bottle should accidentally fall,<br />
+        @{i = i - 1;}
+        There'll be @i green bottles hanging on the wall.<br /><br />
+    </p>
+}
